@@ -13,6 +13,7 @@ import dotenv from "dotenv";
 import helmet from "helmet";
 import cors from "cors";
 import { handleJSONParsingError } from "@/utils";
+import { authRoutes } from "@/routes";
 
 dotenv.config();
 
@@ -27,6 +28,8 @@ app.use(cors());
 app.use(express.json());
 app.use(handleJSONParsingError);
 
+app.use("/api/auth", authRoutes);
+
 app.get("/", (req: Request, res: Response) => {
 	res.send("Express + TypeScript Server");
 });
@@ -34,5 +37,3 @@ app.get("/", (req: Request, res: Response) => {
 app.listen(port, () => {
 	console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
 });
-
-export default app;
