@@ -1,4 +1,4 @@
-# enjoy-website-backend
+# express-ts-template 
 
 A TypeScript Express app for building APIs using MySQL and Prisma.
 
